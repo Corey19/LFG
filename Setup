@@ -1,0 +1,55 @@
+General idea
+    - An app that you can use to find and talk to others to play games with.
+
+Features List
+    - Sign in
+        - sign in using email / discord
+
+    - profile management
+        - add games
+        - add usernames for different platforms
+        - add profile picture
+        - add a discord server invite
+        - ability to change any of whats above
+
+        - tags?
+            - content creator
+            - 18+
+            - language
+            - platform? maybe PC only?
+
+    - real time text chat
+        - when a group is made need the ability to talk to others in the group
+        - DM's???
+
+    - make a group
+        - change group size
+            - max size depending on game?
+
+        - manage members
+            - invite
+            - kick
+
+        - set rules to join
+            - 18+
+            - english
+            - invite only
+
+    - join a already made group
+        - have a list of already made groups that are open to join per game / kinda like tarkov group finder
+        - users can only join groups with tags they have
+
+    - auto group finder???
+        - last thing to add if we do
+        - push a button and auto join group
+            - should group host get a pop to accept?
+                - maybe a option
+
+
+timeline
+
+    - sign in / user creation
+    - user management
+    - create group
+    - join group
+    
