@@ -1,0 +1,71 @@
+# Created by https://github.com/github/gitignore
+
+# IDE and OS specific files
+# ... (refer to your IDE documentation for specific file names)
+
+# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+# Usually these files are written by a python script from a template
+# before PyInstaller builds the exe, so you can skip checking them in.
+*.manifest
+*.spec
+
+# Package managers
+# Comment out the ones you are not using
+pip-requirements.txt
+requirements.txt
+# poetry.lock  # Only recommended to ignore for libraries
+
+# IDE specific files
+# ... (refer to your IDE documentation for specific file names)
+
+# Django
+# Local development settings
+local_settings.py
+
+# Database files
+*.db
+*.sqlite3
+
+# Media and static content
+media/*
+static/*
+
+# Test coverage / reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Other
+*.log
+
+# End of https://www.toptal.com/developers/gitignore
