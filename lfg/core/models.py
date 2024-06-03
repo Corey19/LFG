@@ -21,7 +21,7 @@ class Games(models.Model):
 class MyUserManager(UserManager):
     def create_user(self, email, password, username, **extra_fields):
         if not email and username:
-            raise ValueError("The Email and Name must be set")
+            raise ValueError("The Email and Username must be set")
         elif len(username) > 32:
             raise IntegrityError("username cant be longer than 32 characters")
         email = self.normalize_email(email)
@@ -42,7 +42,7 @@ class User(AbstractUser):
     objects = MyUserManager()
    
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email', 'name']
+    REQUIRED_FIELDS = ['email']
 
 
 class Groups(models.Model):
