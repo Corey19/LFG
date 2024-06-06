@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.conf import settings
 from django.db import IntegrityError
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Tags(models.Model):
@@ -47,7 +48,11 @@ class User(AbstractUser):
 
 class Groups(models.Model):
     name = models.CharField(max_length=255, unique=False)
-    members = models.ManyToManyField(User, related_name='user_groups')  
+    members = models.ManyToManyField(User, related_name='user_groups')
+    group_size = models.IntegerField(default=6, validators=[MinValueValidator(1), MaxValueValidator(6)])
+    is_public = models.BooleanField(default=True)
+    game = models.ForeignKey(Games, default=None, on_delete=models.CASCADE) 
+
 
 
 class Friends(models.Model):

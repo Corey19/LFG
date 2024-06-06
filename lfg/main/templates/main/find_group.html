@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Groups</title>
+</head>
+<body>
+    <h1>Groups</h1>
+    <hr>
+    {% for group in groups %}
+        <h1>{{ group.pk }}</h1>
+        <h2>{{ group.name }}</h2>
+        {% for member in group.members.all %}
+            {{ member.username }}
+        {% endfor %}
+        
+        <h3>{{ group.game }}</h3>
+       
+        <button id="{{group.pk}}"  onclick="window.location.href='{% url "main:join_group" group_id=group.pk %}'">JOIN</button>
+        <hr>
+        <a href="{% url 'user:logout_user' %}"><button>Logout</button></a>
+        <a href="{% url 'main:explore' %}"><button>explore</button></a>
+        <a href="{% url 'main:create_group' %}"><button>create group</button></a>
+
+    {% endfor %}
+    
+
+</body>
+</html>

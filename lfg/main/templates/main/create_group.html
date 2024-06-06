@@ -4,12 +4,11 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <h4>{{ request.user}}</h4>
+    <h1>create group</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Login</button>
+        <button type="submit">create</button>
     </form>
     {% if form.errors %}
         <ul>
@@ -18,6 +17,8 @@
             {% endfor %}
         </ul>
     {% endif %}
-    <a href="{% url 'user:create_user' %}"><button>Create</button></a>
+    <a href="{% url 'user:logout_user' %}"><button>Logout</button></a>
+    <a href="{% url 'main:find_group' %}"><button>Find Group</button></a>
+    <a href="{% url 'main:explore' %}"><button>explore</button></a>
 </body>
 </html>
