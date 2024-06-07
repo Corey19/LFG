@@ -35,23 +35,28 @@ class FindGroupView(LoginRequiredMixin, View):
         groups = Groups.objects.all()
         return render(request, "main/find_group.html", {"groups": groups})
 
-    def post(self, request):
-        pass
-
 
 class JoinGroupView(LoginRequiredMixin, View):
+    def post(self, request, group_id):
+        try: 
+            group = Groups.objects.get(pk=group_id)
+            if group is not None and request.user not in group.members.all():
+                try:
+                    groups = Groups.objects.filter(members=request.user)
+                    if len(groups) == 0:
+                        group.members.add(request.user)
+                except Groups.DoesNotExist:
+                    group.members.add(request.user)
+                
+                
+                return redirect("main:find_group")
+        except Groups.DoesNotExist:
+            return redirect("main:find_group")
+    
+
+class GroupView(LoginRequiredMixin, View):
     def get(self, request, group_id):
         group = Groups.objects.get(pk=group_id)
-        if request.user.is_authenticated is False:
-            return redirect("user:login_user")
-        if group is not None and request.user not in group.members.all():
-            try:
-                groups = Groups.objects.filter(members=request.user)
-                if len(groups) == 0:
-                    group.members.add(request.user)
-            except Groups.DoesNotExist:
-                group.members.add(request.user)
-            
-            
-            return redirect("main:find_group")
+        if group is not None and request.user in group.members.all():
+            return render(request, "main/group.html", {"group": group})
         return redirect("main:find_group")

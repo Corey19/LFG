@@ -16,12 +16,14 @@
         <h3>{{ group.game }}</h3>
        
         <button id="{{group.pk}}"  onclick="window.location.href='{% url "main:join_group" group_id=group.pk %}'">JOIN</button>
+        <button id="{{group.pk}}"  onclick="window.location.href='{% url "main:group" group_id=group.pk %}'">group</button>
         <hr>
-        <a href="{% url 'user:logout_user' %}"><button>Logout</button></a>
-        <a href="{% url 'main:explore' %}"><button>explore</button></a>
-        <a href="{% url 'main:create_group' %}"><button>create group</button></a>
+        
 
     {% endfor %}
+    <a href="{% url 'user:logout_user' %}"><button>Logout</button></a>
+    <a href="{% url 'main:explore' %}"><button>explore</button></a>
+    <a href="{% url 'main:create_group' %}"><button>create group</button></a>
     
 
 </body>

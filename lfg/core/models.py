@@ -51,7 +51,7 @@ class Groups(models.Model):
     members = models.ManyToManyField(User, related_name='user_groups')
     group_size = models.IntegerField(default=6, validators=[MinValueValidator(1), MaxValueValidator(6)])
     is_public = models.BooleanField(default=True)
-    game = models.ForeignKey(Games, default=None, on_delete=models.CASCADE) 
+    game = models.ForeignKey(Games, default=None, null=True, blank=True, on_delete=models.CASCADE) 
 
 
 
