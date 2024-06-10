@@ -1,0 +1,120 @@
+body {
+    /* background-image: linear-gradient(to bottom, #353E55, #B36458);
+    height: 200vh; */
+}
+
+/* #B36458 */
+
+p {
+    color: #E0E7B8;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+input {
+    width: 90%;
+    margin: 20px;
+    border-radius: 20px;
+    outline: 2px solid #E0E7B8;
+    padding: 0px 20px;
+    background-color: #D9D9D9;
+}
+
+input:focus {
+    outline: 4px solid #353E55;
+}
+
+.desktop-img {
+    position: absolute;
+    top: 100px;
+    left: 2vw;
+    height: auto;
+    width: 20vw;
+    z-index: -1;
+    opacity: 20%;
+
+}
+
+.headset-img {
+    position: absolute;
+    top: 500px;
+    left: 80vw;
+    height: auto;
+    width: 20vw;
+    z-index: -1;
+    opacity: 20%;
+
+}
+
+
+.headset-img2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navbar-search {
+
+    width: auto;
+    margin: 0px;
+    border-radius: 20px;
+    outline: 2px solid #E0E7B8;
+    padding: 0px 20px;
+    background-color: #353E55;
+}
+
+.navbar-search::placeholder {
+    color: #E0E7B8;
+}
+
+.gradient-box {
+    background: linear-gradient(to bottom, #353E55, #725157);
+    height: 100vh;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+
+}
+
+
+.navbar-custom {
+    background-color: #D9D9D9;
+}
+
+#title-div {
+    text-align: center;
+    color: #E0E7B8;
+    padding: 1em;
+}
+
+#register-container {
+    background-color: #B36458;
+    margin: 0px 8em 8em 8em;
+
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#register-button {
+    margin-left: 35vw;
+
+    padding: 5px 20px;
+    background-color: #353E55;
+    color: #E0E7B8;
+    border-radius: 15px;
+    font-style: bold;
+}
+
+#login-button {
+    margin-left: 5vw;
+    margin-top: 5px;
+    padding: 2px 16px;
+    background-color: #353E55;
+    color: #E0E7B8;
+    border-radius: 15px;
+    font-style: bold;
+}

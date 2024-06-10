@@ -60,3 +60,5 @@ class GroupView(LoginRequiredMixin, View):
         if group is not None and request.user in group.members.all():
             return render(request, "main/group.html", {"group": group})
         return redirect("main:find_group")
+    
+
