@@ -37,9 +37,11 @@ class FindGroupView(LoginRequiredMixin, View):
 
 
 class JoinGroupView(LoginRequiredMixin, View):
-    def post(self, request, group_id):
+    def get(self, request, group_id):
         try: 
             group = Groups.objects.get(pk=group_id)
+            print(group.members.all())
+            print(request.user)
             if group is not None and request.user not in group.members.all():
                 try:
                     groups = Groups.objects.filter(members=request.user)
@@ -49,7 +51,7 @@ class JoinGroupView(LoginRequiredMixin, View):
                     group.members.add(request.user)
                 
                 
-                return redirect("main:find_group")
+            return redirect("main:find_group")
         except Groups.DoesNotExist:
             return redirect("main:find_group")
     
